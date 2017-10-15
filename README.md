@@ -1,7 +1,11 @@
 # Lab2 for translation methods course
 
+## Dependencies
+
+Project uses Graphviz shared library. So the library is needed to be installed to /usr/lib/
+
 ## For building 
-Go to build folder and do
+Go to the build folder and do
 
 ```bash
 cmake ..
