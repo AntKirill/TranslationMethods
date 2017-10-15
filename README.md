@@ -1,6 +1,6 @@
 # Lab2 for translation methods course
 
-###### For building 
+## For building 
 Go to build folder and do
 
 ```bash
@@ -8,7 +8,7 @@ cmake ..
 make
 ```
 
-###### For testing 
+## For testing 
 
 Go to build folder and write Paskal funtion/procedure declaration to input.txt. After that do
 
@@ -24,4 +24,4 @@ xdg-open output.png
 
 is automatically run.
 
-If something goes wrong the message abuot it appers on stderr.
+If something goes wrong the message about it appers on stderr.
