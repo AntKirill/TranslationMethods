@@ -1,0 +1,1 @@
+function f(a8, _b, c, d,e,f,g: integer; g : double; Strusturp: String):int;
