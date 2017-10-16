@@ -20,6 +20,11 @@ struct parse_exception : public std::exception {
 
     parse_exception(const std::string &s, int x) noexcept : message(s + " at position " + std::to_string(x)) {}
 
+    template<typename T>
+    static void parse_assert(T predicate) {
+        if (!predicate) throw parse_exception("Not valid function/procedure header");
+    }
+
 };
 
 

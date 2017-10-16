@@ -2,7 +2,6 @@
 // Created by kirant on 11.10.17.
 //
 
-#include <cassert>
 #include "parser.h"
 #include "parse_exception.h"
 
@@ -21,62 +20,62 @@ std::shared_ptr<parser::node> parser::S()  {
             res.add_children(ch1);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::NAME);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::NAME);
             ch2 = std::make_shared<node>(lexer_ptr->get_cur_attribute());
             res.add_children(ch2);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::LBR);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::LBR);
             res.add_children(ch3);
             lexer_ptr->next_token();
 
             ch4 = A();
             res.add_children(ch4);
 
-            assert(lexer_ptr->get_cur_token() == token::RBR);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::RBR);
             res.add_children(ch5);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::DOTDOT);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTDOT);
             res.add_children(ch6);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::NAME);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::NAME);
             ch7 = std::make_shared<node>(lexer_ptr->get_cur_attribute());
             res.add_children(ch7);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::DOTCOMA);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTCOMA);
             res.add_children(ch8);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::END);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::END);
             break;
         case token::PROCEDURE :
             res.add_children(ch1);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::NAME);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::NAME);
             ch2 = std::make_shared<node>(lexer_ptr->get_cur_attribute());
             res.add_children(ch2);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::LBR);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::LBR);
             res.add_children(ch3);
             lexer_ptr->next_token();
 
             ch4 = A();
             res.add_children(ch4);
 
-            assert(lexer_ptr->get_cur_token() == token::RBR);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::RBR);
             res.add_children(ch5);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::DOTCOMA);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTCOMA);
             res.add_children(ch6);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::END);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::END);
             break;
         default:
             throw parse_exception("Unknown function/procedure declaration");
@@ -157,11 +156,11 @@ std::shared_ptr<parser::node> parser::B()  {
             ch = C();
             res.add_children(ch);
 
-            assert(lexer_ptr->get_cur_token() == token::DOTDOT);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTDOT);
             res.add_children(ch1);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::NAME);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::NAME);
             ch2 = std::make_shared<node>(lexer_ptr->get_cur_attribute());
             res.add_children(ch2);
             lexer_ptr->next_token();
@@ -201,7 +200,7 @@ std::shared_ptr<parser::node> parser::D()  {
             res.add_children(ch);
             lexer_ptr->next_token();
 
-            assert(lexer_ptr->get_cur_token() == token::NAME);
+            parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::NAME);
             ch1 = std::make_shared<node>(lexer_ptr->get_cur_attribute());
             res.add_children(ch1);
             lexer_ptr->next_token();
