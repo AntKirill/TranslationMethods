@@ -29,6 +29,7 @@ xdg-open output.png
 is automatically run.
 
 If there is no input.txt at build then message about it appears on stderr and  parser is tested on all of the tests of folder tests/.
+At tests/ directory t1 - t5 are correct, t6 - t8 are incorrect and must fail.
 
 If something goes wrong the message about it appers on stderr.
 
