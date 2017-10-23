@@ -35,4 +35,4 @@ If something goes wrong the message about it appers on stderr.
 ## Example of output tree 
 For test: function f(a8, _b, c, d,e,f,g: integer; g : double; Straustrup: String):int;
 
-[!alt text](https://user-images.githubusercontent.com/17815649/31891307-af6084fc-b80e-11e7-8bcc-d0f465eb9bbd.png)
+![alt text](https://user-images.githubusercontent.com/17815649/31891307-af6084fc-b80e-11e7-8bcc-d0f465eb9bbd.png)
