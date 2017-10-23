@@ -52,6 +52,7 @@ struct parser::iterator {
 
     friend iterator parser::parse(std::string);
 
+
 private:
     std::shared_ptr<node> v;
 

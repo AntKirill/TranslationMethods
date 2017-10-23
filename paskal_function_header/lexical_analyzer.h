@@ -18,9 +18,9 @@ struct lexical_analyzer {
 
     token get_cur_token() const noexcept;
 
-    int get_cur_pos() const  noexcept;
+    int get_cur_pos() const noexcept;
 
-    std::string get_cur_attribute() const  noexcept;
+    std::string get_cur_attribute() const noexcept;
 
     ~lexical_analyzer() noexcept;
 
@@ -33,6 +33,7 @@ private:
     int cur_pos;
     token cur_token;
     std::string cur_attribute;
+    bool was_declaration = false;
 
 };
 

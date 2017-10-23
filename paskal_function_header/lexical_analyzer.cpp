@@ -50,14 +50,16 @@ void lexical_analyzer::next_token() {
         word += static_cast<char>(cur_char);
         next_char();
     }
-    if (word == "function") {
+    if (!was_declaration && word == "function") {
         cur_token = token::FUNCTION;
         cur_attribute = word;
+        was_declaration = true;
         return;
     }
-    if (word == "procedure") {
+    if (!was_declaration && word == "procedure") {
         cur_token = token::PROCEDURE;
         cur_attribute = word;
+        was_declaration = true;
         return;
     }
     if (word.length() > 0) {

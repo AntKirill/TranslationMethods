@@ -7,16 +7,17 @@
 
 std::shared_ptr<parser::node> parser::S()  {
     node res("S");
-    auto ch1 = std::make_shared<node>("function");
+    std::shared_ptr<node> ch1;
     std::shared_ptr<node> ch2;
     auto ch3 = std::make_shared<node>("(");
     std::shared_ptr<node> ch4;
     auto ch5 = std::make_shared<node>(")");
-    auto ch6 = std::make_shared<node>(":");
+    std::shared_ptr<node> ch6;
     std::shared_ptr<node> ch7;
     auto ch8 = std::make_shared<node>(";");
     switch (lexer_ptr->get_cur_token()) {
         case token::FUNCTION :
+            ch1 = std::make_shared<node>("function");
             res.add_children(ch1);
             lexer_ptr->next_token();
 
@@ -37,6 +38,7 @@ std::shared_ptr<parser::node> parser::S()  {
             lexer_ptr->next_token();
 
             parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTDOT);
+            ch6 = std::make_shared<node>(":");
             res.add_children(ch6);
             lexer_ptr->next_token();
 
@@ -52,6 +54,7 @@ std::shared_ptr<parser::node> parser::S()  {
             parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::END);
             break;
         case token::PROCEDURE :
+            ch1 = std::make_shared<node>("procedure");
             res.add_children(ch1);
             lexer_ptr->next_token();
 
@@ -72,6 +75,7 @@ std::shared_ptr<parser::node> parser::S()  {
             lexer_ptr->next_token();
 
             parse_exception::parse_assert(lexer_ptr->get_cur_token() == token::DOTCOMA);
+            ch6 = std::make_shared<node>(";");
             res.add_children(ch6);
             lexer_ptr->next_token();
 
