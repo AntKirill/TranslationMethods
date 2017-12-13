@@ -1,1 +1,0 @@
-function super_name(alpha, beta, gamma, delta: integer; x, y, z, w : double) : integer;
